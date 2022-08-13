@@ -1,10 +1,15 @@
-import NavBar from '../components/NavBar';
+import { getFeaturedEvents } from '../dummy-data';
+import EventList from '../components/events/event-list';
 
-export default function Home() {
+export default function HomePage() {
+  const featuredEvent = getFeaturedEvents();
+  console.log(featuredEvent);
   return (
-    <div>
-      <NavBar></NavBar>
-      <h1>The Home Page </h1>
+    <div className='bg-red-500'>
+      <header>
+        <nav></nav>
+      </header>
+      <EventList items={featuredEvent} />
     </div>
   );
 }
